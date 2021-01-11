@@ -8,8 +8,14 @@
  * isArrayLengthOdd([1, 2, 3]) -> true
  * isArrayLengthOdd([1, 2, 3, 4]) -> flase
  */
+console.log(isArrayLengthOdd([1, 2, 3]));
+console.log(isArrayLengthOdd([1, 2, 3, 4]));
+
 function isArrayLengthOdd(numbers) {
-  // Your code here
+  if(numbers.length%2 !== 0){
+    return true;
+  }else 
+  return false;
 }
 
 /**
@@ -22,8 +28,13 @@ function isArrayLengthOdd(numbers) {
  * isArrayLengthEven([1, 2, 3]) -> false
  * isArrayLengthEven([1, 2, 3, 4]) -> true
  */
+console.log(isArrayLengthEven([1, 2, 3]));
+console.log(isArrayLengthEven([1, 2, 3, 4]));
 function isArrayLengthEven(numbers) {
-  // Your code here
+  if(numbers.length%2 == 0){
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -34,9 +45,15 @@ function isArrayLengthEven(numbers) {
  * e.g.
  * addLailaToArray(["Mshary", "Hasan"]) -> ["Mshary", "Hasan", "Laila"]
  */
+
+
+let instructors=["Mshary", "Hasan"];
+
 function addLailaToArray(instructors) {
-  // Your code here
+  instructors.push("Laila");  
+  return instructors;
 }
+
 
 /**
  * eliminateTeam(teams):
@@ -46,9 +63,14 @@ function addLailaToArray(instructors) {
  * e.g.
  * eliminateTeam(["Brazil", "Germany", "Italy"]) -> "Italy"
  */
+ let teams=["Brazil", "Germany", "Italy"];
+
+
 function eliminateTeam(teams) {
-  // Your code here
+  return teams.pop();
+  
 }
+
 
 /**
  * secondHalfOfArrayIfItIsEven(fruits):
@@ -60,9 +82,19 @@ function eliminateTeam(teams) {
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi"]) -> ["banana", "kiwi"]
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi", "blueberry"]) -> []
  */
+
+
+
 function secondHalfOfArrayIfItIsEven(fruits) {
-  // Your code here
-}
+  if(fruits.length%2 == 0){
+    fruits=fruits.slice(parseInt(fruits.length/2),fruits.length);
+  }else if(fruits.length%2 !== 0){
+    fruits=fruits.slice(0,0);
+  }
+  return fruits;
+} 
+ console.log(secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi"]));
+ console.log(secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi", "blueberry"])); 
 
 /**
  * youGottaCalmDown(shout):
@@ -78,9 +110,21 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  * - Use string method .slice()
  * - Use string method .endsWith()
  */
+
+
+// console.log(youGottaCalmDown("Taylor Schwifting!!!!!!!!!!!"));
+// console.log(youGottaCalmDown("Hellooooo"));
+
 function youGottaCalmDown(shout) {
-  // Your code here
+ if(shout.endsWith("!")){
+   let index=shout.indexOf("!");
+   return shout.slice(0,index+1);
+ } 
+ return shout;
 }
+console.log(youGottaCalmDown("HI!!!!!!!!!!"));
+
+
 
 module.exports = {
   isArrayLengthOdd,
